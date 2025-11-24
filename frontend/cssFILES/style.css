@@ -1,25 +1,18 @@
-/* -------------------------------------------------------------------------- */
-/* Global Reset & Typography                     */
-/* -------------------------------------------------------------------------- */
+
 * {
-    /* Reset default browser padding and margin */
     padding: 0;
     margin: 0;
-    /* Set default text color to white for the dark background */
     color: white; 
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    box-sizing: border-box; 
 }
 
 section {
-    /* Main container styling */
     overflow: hidden;
     height: 100vh;
-    background-color: #0B121E; /* Dark background color */
+    background-color: #0B121E; 
 }
 
-/* Base link and list styling */
 a {
-    /* Ensure all links are white and have no underline */
     color: white;
     text-decoration: none;
 }
@@ -44,10 +37,9 @@ li {
 /* -------------------------------------------------------------------------- */
 
 nav {
-    /* Container for the navigation bar */
+  
     border-radius: 15px;
     margin: 15px 150px 0 150px; /* Top margin added for spacing */
-    padding: 10px 0; /* Vertical padding */
     display: flex;
     align-items: center;
     /* Use space-between for clearer separation of left and right sections */
@@ -56,7 +48,6 @@ nav {
 }
 
 nav .left {
-    /* 'Home' link container */
     border-radius: 5px; /* Adjusted from 50px */
     padding: 1px;
     margin-left: 20px; /* Add margin to align it better within the nav container */
@@ -76,7 +67,7 @@ nav .right {
     align-items: center;
     justify-content: center;
     background-color: #d9d9d931;
-    height: 45px;
+    height: 35px;
     border-radius: 5px;
 }
 
