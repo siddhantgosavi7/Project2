@@ -1,4 +1,4 @@
-let array = ["Humidity is the measure of water vapor in the air", 
+let array = [
     "Humidity is the measure of water vapor in the air", 
     "Wind: This indicates both the speed and direction of the wind",
 "Atmospheric pressure: The pressure exerted by the weight of the atmosphere",
@@ -9,7 +9,7 @@ let i = 0;
 function printTerms() {
     setInterval(() => {
         document.getElementById("Jshelp").value = array[i];
-        i = (i + 1) % array.length;
+        i = (i + 1) % array.length; // 6%5=1 
         console.log("op");
     }, 3000);
 }
