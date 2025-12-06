@@ -1,44 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log In</title>
-    <link rel="stylesheet" href="../cssFILES/style.css"> 
-    
-</head>
-<body>
+    <link rel="stylesheet" href="../cssFILES/style.css" />
+  </head>
+  <body>
     <section id="Ekalavy_login">
-        <nav>
-            <div class="left">
-               <div><a href="./index.html">Home</a></div>
+      <nav>
+        <div class="left">
+          <div><a href="./index.html">Home</a></div>
+        </div>
+        <div class="right">
+          <ul>
+            <li><a href="./about.html">About project</a></li>
+            <li><a href="./login.html">Log In</a></li>
+            <li><a href="./signup.html">Sign Up</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="login-container">
+        <div class="login-box">
+          <h2>Log In</h2>
+          <form>
+            <div class="input-group">
+              <label for="username">Username </label>
+              <input type="text" id="username" name="username" value="" />
             </div>
-            <div class="right">
-                <ul>
-                    <li> <a href="./about.html">About project</a></li>
-                    <li><a href="./login.html">Log In</a></li> 
-                    <li><a href="./signup.html">Sign Up</a></li> </ul>
+            <div class="input-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" value="" />
             </div>
-        </nav>
-        <div class="login-container">
-            <div class="login-box">
-                <h2>Log In</h2>
-                <form action="#" method="POST"> <div class="input-group">
-                        <label for="username">Username or Email</label>
-                        <input type="text" id="username" name="username" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-                    <button type="submit" class="login-button">Log In</button>
-                </form>
-                <p class="signup-link">
+            <button type="submit" class="login-button" onclick="toCheack(this)">
+              Log In
+            </button>
+          </form>
+          <p class="signup-link">
+            Don't have an account? <a href="./signup.html">Sign Up</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function toCheack(para) {
+        const username = document.getElementById("username");
+        const noSpaceLetters = username.value.trim();
+        const length = noSpaceLetters.length;
+        console.log(`${length} username`);
+
+        const password = document.getElementById("password");
+        const noSpaceLettersPass = password.value.trim();
+        const lengthPass = noSpaceLetters.length;
+        console.log(`${lengthPass} password`);
+        // --------------for userName--------------------
+        // to avoid blank inouts
+        if (username.value === "" && password.value === "") {
+          alert("Enter an Username and pass  1st ");
+        } else if (username.value !== "" && password.value !== "") {
+          // to avoid too long input
+          if (length < 3) {
+            alert("enter name greater then 3");
+            username.value = "";
+          } else if (length > 25) {
+            alert("can u try with initals?");
+            username.value = "";
+          }
+          // --------------for password--------------------
+
+          // to avoid blank inouts
+
+          if (lengthPass < 3) {
+            alert("enter pass greater then 3");
+            password.value = "";
+          } else if (lengthPass > 25) {
+            alert("can u try with small one");
+            password.value = "";
+          }
+        } else {
+          alert("login s");
+        }
+      }
+
+      //----------to make desplay error----------------
+      const dispalyStatment = document.getElementsByClassName("input-group");
+      dispalyStatment.innerHTML = `
+ <p class="signup-link">
                     Don't have an account? <a href="./signup.html">Sign Up</a>
                 </p>
-            </div>
-        </div>
-         
-    </section>
-</body>
+                `;
+    </script>
+  </body>
 </html>
