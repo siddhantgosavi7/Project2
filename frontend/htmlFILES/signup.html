@@ -24,7 +24,7 @@
         <div class="signup-container">
             <div class="signup-box">
                 <h2>Create Your Account</h2>
-                <form action="#" method="POST"> <div class="input-group">
+                <form action="./desktop.html" > <div class="input-group">
                         <label for="fullName">Full Name</label>
                         <input type="text" id="fullName" name="fullName" required>
                     </div>
@@ -40,7 +40,7 @@
                         <label for="confirmPassword">Confirm Password</label>
                         <input type="password" id="confirmPassword" name="confirmPassword" required>
                     </div>
-                    <button type="submit" class="signup-button">Sign Up</button>
+                    <button type="submit" class="signup-button" onclick="toCheack(event)">Sign Up</button>
                 </form>
                 <p class="login-link">
                     Already have an account? <a href="./login.html">Log In</a>
@@ -49,5 +49,92 @@
         </div>
          
     </section>
+    <script>
+      let sprinter = true;
+      function toCheack(event) {
+
+        const fullName = document.getElementById("fullName");
+        const noSpaceLetters = fullName.value.trim();
+        const length = noSpaceLetters.length;
+        console.log(`${length} fullName`);
+
+
+        const password = document.getElementById("password");
+        const noSpaceLettersPass = password.value.trim();
+        const lengthPass = noSpaceLetters.length;
+        console.log(`${lengthPass} password`);
+
+        const confirmPassword = document.getElementById("confirmPassword");
+        const confirmnoSpaceLettersPass = confirmPassword.value.trim();
+        const confirmlengthPass = noSpaceLetters.length;
+        console.log(`${lengthPass} confirmPassword`);
+
+        // --------------for userName--------------------
+
+        // to avoid blank inouts
+        if (fullName.value === "" && password.value === "") {
+          alert("Enter an fullName and pass  1st ");
+          sprinter = false;
+        } else if (fullName.value !== "" && password.value !== "") {
+
+          if (length < 3) {
+            alert("enter name greater then 3");
+            fullName.value = "";
+            sprinter = false;
+          } else if (length > 25) {
+            alert("can u try with initals?");
+            fullName.value = "";
+            sprinter = false;
+          }else{
+            sprinter = true;
+          }
+
+          
+          // --------------for password--------------------
+
+          // to avoid blank inouts
+
+          if (lengthPass < 3) {
+            alert("enter pass greater then 3");
+            sprinter = false;
+            password.value = "";
+          } else if (lengthPass > 25) {
+            alert("can u try with small one");
+            password.value = "";
+            sprinter = false;
+          }
+        } else {
+         sprinter = true;
+        }
+
+                  if (confirmlengthPass < 3) {
+            alert("enter pass greater then 3");
+            confirmPassword.value = "";
+            sprinter = false;
+          } else if (confirmlengthPass > 25) {
+            alert("can u try with small one");
+            confirmPassword.value = "";
+            sprinter = false;
+          }
+         else {
+         sprinter = true;
+        }
+
+        if ( sprinter === true) {
+          alert("u got it😎");
+        }else{
+          event.preventDefault();
+        }
+      }
+
+
+      //----------to make desplay error----------------
+      const dispalyStatment = document.getElementsByClassName("input-group");
+      dispalyStatment.innerHTML = `
+ <p class="signup-link">
+                    Don't have an account? <a href="./signup.html">Sign Up</a>
+                </p>
+                `;
+    </script>
 </body>
 </html>
