@@ -1,22 +1,9 @@
 {
-  "name": "ekalavya",
-  "version": "1.0.0",
-  "description": "my first backend package",
-  "homepage": "https://github.com/siddhantgosavi7/Project2#readme",
-  "bugs": {
-    "url": "https://github.com/siddhantgosavi7/Project2/issues"
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/siddhantgosavi7/Project2.git"
+  "dependencies": {
+    "express": "^5.2.1"
   },
-  "license": "ISC",
-  "author": "Ekalavya",
-  "type": "module",
-  "main": "sever.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node sever.js"
-
-  }
+  "type":"module"
 }

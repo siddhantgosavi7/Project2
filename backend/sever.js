@@ -1,1 +1,0 @@
-console.log("NAMO PARVATIPATAYE HAR HAR MAHDEV");
