@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Otp</title>
+     <link rel="stylesheet" href="../cssFILES/style.css" />
+     <!--for online logo -->
+   
+    <style>
+.background{
+    background-color: #0b121ed9;
+}
+    </style>
+</head>
+<body>
+    <section class ="background">
+      <div class="login-container">
+        <div class="login-box">
+          <h2>OTP PLZ</h2>
+       <form  action="./desktop.html" >
+            <div class="input-group">
+              <label for="username">Otp </label>
+              <input type="text" id="username" name="username" value="" />
+            </div>
+
+            <button type="submit" class="login-button" onclick="toCheack(event)">
+              Log In
+            </button>
+          </form>
+                    <p class="signup-link">
+            Resend otp <a href="./signup.html">Resend</a>
+          </p>
+        </div></div></section>
+
+         <script>
+   
+          var sprinter = true;
+      function toCheack(event) {
+
+        const username = document.getElementById("username");
+        const noSpaceLetters = username.value.trim();
+        const length = noSpaceLetters.length;
+        console.log(`${length} username`);
+
+       if (username.value === "") {
+          alert("Enter an username and pass  1st ");
+          sprinter = false;
+        } else if (username.value !== "" ) {
+
+          if (length < 3) {
+            alert("enter name greater then 3");
+            username.value = "";
+            sprinter = false;
+          } else if (length > 25) {
+            alert("can u try with initals?");
+            username.value = "";
+            sprinter = false;
+          }else{
+            sprinter = true;
+          }
+    }
+    
+        if ( sprinter === true) {
+          alert("u got it😎");
+        }else{
+          event.preventDefault();
+        }
+}
+          </script>
+ 
+</body>
+</html>

@@ -35,7 +35,7 @@
         <div class="signup-container">
             <div class="signup-box">
                 <h2>Create Your Account</h2>
-                <form action="./desktop.html" > <div class="input-group">
+                <form action="./otp.html" > <div class="input-group">
                         <label for="fullName">Full Name</label>
                         <input type="text" id="fullName" name="fullName" required>
                     </div>
@@ -51,7 +51,7 @@
                         <label for="confirmPassword">Confirm Password</label>
                         <input type="password" id="confirmPassword" name="confirmPassword" required>
                     </div>
-                    <button type="submit" class="signup-button" onclick="toCheack(event)">Sign Up</button>
+                    <button type="submit" class="signup-button" onclick="toCheack(event)">Otp verification</button>
                 </form>
                 <p class="login-link">
                     Already have an account? <a href="./login.html">Log In</a>
@@ -140,12 +140,7 @@
 
 
       //----------to make desplay error----------------
-      const dispalyStatment = document.getElementsByClassName("input-group");
-      dispalyStatment.innerHTML = `
- <p class="signup-link">
-                    Don't have an account? <a href="./signup.html">Sign Up</a>
-                </p>
-                `;
+
     </script>
 </body>
 </html>
